@@ -21,18 +21,24 @@ public class GamePanel extends JPanel implements Runnable {
     // WORLD SETTINGS
     public final int maxWorldCol = 50;
     public final int maxWorldRow = 50;
-    public final int worldWidth = tileSize * maxWorldCol;
-    public final int worldHeight = tileSize * maxWorldRow;
+//    public final int worldWidth = tileSize * maxWorldCol;
+//    public final int worldHeight = tileSize * maxWorldRow;
 
     // FPS
     int FPS = 60;
 
+    // SYSTEM
     TileManager tileM = new TileManager(this);
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
-    public Player player = new Player(this, keyH);
+    Sound music = new Sound();
+    Sound se = new Sound();
+    public UI ui = new UI(this);
     public CollisionCheck check = new CollisionCheck(this);
     public AssetSet aSet = new AssetSet(this);
+
+    // ENTITY AND OBJECT
+    public Player player = new Player(this, keyH);
     public SuperObject obj[] = new SuperObject[15];
 
     // SET PLAYER DEFAULT POSITION
@@ -49,6 +55,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
     public void setupGame() {
         aSet.setObject();
+        playMusic(0);
     }
     public void startGameThread() {
         gameThread = new Thread(this);
@@ -90,16 +97,35 @@ public class GamePanel extends JPanel implements Runnable {
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
-        //TILE
+
+        // TILE
         tileM.draw(g2);
-        //OBJECT
+
+        // OBJECT
         for(int i = 0; i < obj.length; i++) {
             if(obj[i] != null) {
                 obj[i].draw(g2, this);
             }
         }
-        //PLAYER
+
+        // PLAYER
         player.draw(g2);
+
+        // UI
+        ui.draw(g2);
+
         g2.dispose();
+    }
+    public void playMusic(int i) {
+        music.setFile(i);
+        music.play();
+        music.loop();
+    }
+    public void stopMusic() {
+        music.stop();
+    }
+    public void playSE(int i) {
+        se.setFile(i);
+        se.play();
     }
 }

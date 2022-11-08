@@ -21,7 +21,7 @@ public class AssetSet {
         gp.obj[1].worldX = 5 * gp.tileSize;
         gp.obj[1].worldY = 26 * gp.tileSize;
 
-        gp.obj[2] = new Key();
+        gp.obj[2] = new Boots();
         gp.obj[2].worldX = 25 * gp.tileSize;
         gp.obj[2].worldY = 42 * gp.tileSize;
 
@@ -37,24 +37,20 @@ public class AssetSet {
         gp.obj[5].worldX = 3 * gp.tileSize;
         gp.obj[5].worldY = 45 * gp.tileSize;
 
-        gp.obj[6] = new Boots();
+        gp.obj[6] = new Chest();
         gp.obj[6].worldX = 43 * gp.tileSize;
         gp.obj[6].worldY = 28 * gp.tileSize;
 
         gp.obj[7] = new Chest();
-        gp.obj[7].worldX = 3 * gp.tileSize;
-        gp.obj[7].worldY = 3 * gp.tileSize;
+        gp.obj[7].worldX = 7 * gp.tileSize;
+        gp.obj[7].worldY = 3 *gp.tileSize;
 
         gp.obj[8] = new Chest();
-        gp.obj[8].worldX = 11 * gp.tileSize;
-        gp.obj[8].worldY = 3 *gp.tileSize;
+        gp.obj[8].worldX = 3 * gp.tileSize;
+        gp.obj[8].worldY = 42 * gp.tileSize;
 
-        gp.obj[9] = new Chest();
-        gp.obj[9].worldX = 3 * gp.tileSize;
-        gp.obj[9].worldY = 42 * gp.tileSize;
-
-        gp.obj[10] = new Boots();
-        gp.obj[10].worldX = 21 * gp.tileSize;
-        gp.obj[10].worldY = 5 * gp.tileSize;
+        gp.obj[9] = new Key();
+        gp.obj[9].worldX = 18 * gp.tileSize;
+        gp.obj[9].worldY = 1 * gp.tileSize;
     }
 }
